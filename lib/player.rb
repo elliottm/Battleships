@@ -33,6 +33,7 @@ class Player
   end
   
   def ship_attacked at_coordinates
+    #@battleships - at_coordinates
     @battleships.pop() #Ruz- need to delete the correct element
   end
 
