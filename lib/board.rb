@@ -21,7 +21,8 @@ class Board
     @battleships << ships
   end
 
-  def register_shot at_coordinates  
+  def register_shot at_coordinates 
+    replace_board_element(at_coordinates) 
   end
 
   def rows
@@ -53,16 +54,17 @@ class Board
 
   def first_board_index at_coordinates
     column_index = converts_letter_to_index(split_coordinates_to_letter(at_coordinates))
-    [column_index]
+    column_index
   end
 
   def second_board_index at_coordinates
     row_index = split_coordinates_to_number(at_coordinates)    
-    [row_index]
+    row_index
   end
 
-  def replace_board_element [column_index], [row_index]
-    @battleground[column_index][row_index] = 
+  def replace_board_element at_coordinates
+    rows[first_board_index(at_coordinates)][second_board_index(at_coordinates)] = 'o'
+  end
 
   def opponent_view
   end

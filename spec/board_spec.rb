@@ -55,22 +55,19 @@ describe Board do
   it 'returns first index for empty_board' do
     player = double :player
     board = Board.new(player)
-    expect(board.first_board_index('A5')).to eq [0]
+    expect(board.first_board_index('A5')).to eq 0
   end
 
   it 'returns second index for empty_board' do
     player = double :player
     board = Board.new(player)
-    expect(board.second_board_index('A5')).to eq [5]
+    expect(board.second_board_index('A5')).to eq 5
   end
  
-  it 'can replace something on the board' do
+  it 'can replace an element on the board with empty space' do
     player = double :player
     board = Board.new(player)
-    board.replace_board_element [1], [0]
-    expect(board.rows[1][0]).to eq 's'
-  end
-
+    expect(board.replace_board_element('A5')).to eq 'o'
   end
 
 
