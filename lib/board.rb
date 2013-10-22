@@ -60,7 +60,10 @@ class Board
     row_index = split_coordinates_to_number(at_coordinates)    
     [row_index]
   end
-  
+
+  def replace_board_element [column_index], [row_index]
+    @battleground[column_index][row_index] = 
+
   def opponent_view
   end
 

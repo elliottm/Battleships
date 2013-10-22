@@ -63,6 +63,15 @@ describe Board do
     board = Board.new(player)
     expect(board.second_board_index('A5')).to eq [5]
   end
+ 
+  it 'can replace something on the board' do
+    player = double :player
+    board = Board.new(player)
+    board.replace_board_element [1], [0]
+    expect(board.rows[1][0]).to eq 's'
+  end
+
+  end
 
 
 # do i connect alpha_hash method to split_coord as an argument?  
