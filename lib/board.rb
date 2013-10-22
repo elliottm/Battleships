@@ -53,12 +53,12 @@ class Board
 
   def first_board_index at_coordinates
     column_index = converts_letter_to_index(split_coordinates_to_letter(at_coordinates))
-    col_arr = [column_index]
+    [column_index]
   end
 
   def second_board_index at_coordinates
     row_index = split_coordinates_to_number(at_coordinates)    
-    row_arr = [row_index]
+    [row_index]
   end
   
   def opponent_view
