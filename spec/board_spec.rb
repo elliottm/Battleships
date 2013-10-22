@@ -34,11 +34,40 @@ describe Board do
     board.put_ships_to_board battleships
     expect(board).to have_ships
   end
-
-  it 'has an alphabet hash' do
+  it 'splits user coordinates into a letter' do
     player = double :player
     board = Board.new(player)
-    expect(board.alphabet_hash('B')).to eq 1
+    expect(board.split_coordinates_to_letter('A5')).to eq 'A'
   end
+
+  it 'splits user coordinates into a number' do
+    player = double :player
+    board = Board.new(player)
+    expect(board.split_coordinates_to_number('B5')).to eq 5
+  end
+
+  it 'returns index based on a letter' do
+    player = double :player
+    board = Board.new(player)
+    expect(board.converts_letter_to_index('B')).to eq 1
+  end
+
+  it 'returns first index for empty_board' do
+    player = double :player
+    board = Board.new(player)
+    expect(board.first_board_index('A5')).to eq [0]
+  end
+
+  it 'returns first index for empty_board' do
+    player = double :player
+    board = Board.new(player)
+    expect(board.first_board_index('A5')).to eq [5]
+  end
+
+
+# do i connect alpha_hash method to split_coord as an argument?  
+# or in UI config this?
+
+  
 
 end
