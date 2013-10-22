@@ -36,5 +36,7 @@ describe Player do
           expect(player.board).to receive(:register_shot).with(:at_coordinates)
           player.shoot(:at_coordinates, :opponent_board)
         end
-        
+
+      
+
 end
