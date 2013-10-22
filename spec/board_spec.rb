@@ -35,11 +35,10 @@ describe Board do
     expect(board).to have_ships
   end
 
-  it 'splits user coordinates for translation' do
+  it 'has an alphabet hash' do
     player = double :player
     board = Board.new(player)
-    board.split_coordinates('A5')
-    expect(user_input).to eq ['A', '5']
+    expect(board.alphabet_hash('B')).to eq 1
   end
 
 end

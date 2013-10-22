@@ -36,17 +36,24 @@ class Board
     @battleships << battleships
   end
 
-  def alphabet_array
-     ('A'..'J').to_a
+  def split_coordinates at_coordinates
+   element_split =  at_coordinates.split('')
+   letter = element_split[0].upcase
   end
 
-  def split_coordinates at_coordinates
-   element_split = at_coordinates.split('')
-   element_split[0].convert_to_alphabet
+  def alphabet_hash letter
+    alpha_hash = {'A' => 0, 'B' => 1, 'C' => 2, 'D' => 3, 'E' => 4, 'F' => 5, 'G' => 6, 'H' => 7, 'I' => 8, 'J' => 9, 'K' => 10}
+    key_return = alpha_hash[letter] 
   end
+
+  def alphabet_to_integer letter_string
+    index = letter_string.map {|key| value }
+  end
+
 
   def opponent_view
   end
+
 
   
 
